@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Divyansh Bhardwaj Portfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/3c750365-ca92-473e-b6dc-a49831cf38d9.png" rel="icon">
+  <link href="assets/img/3c750365-ca92-473e-b6dc-a49831cf38d9.png" rel="apple-touch-icon">
+
+ 
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#1a73e8;
+      --muted:#697386;
+      --card-bg:#ffffff;
+      --page-bg:#f7f9fb;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--page-bg);
+      color:#222;
+      font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+    }
+
+    header{
+      background:#071126;
+      color:#fff;
+      padding:20px 28px;
+    }
+    header h1{
+      margin:0;
+      font-size:20px;
+      font-weight:700;
+      letter-spacing:0.2px;
+    }
+
+    /* Top layout */
+    .top-wrap{
+      max-width:1200px;
+      margin:28px auto;
+      padding:0 20px;
+      display:flex;
+      gap:32px;
+      align-items:flex-start;
+      justify-content:space-between;
+    }
+
+    /* slideshow column */
+    .slideshow {
+      flex:1 1 58%;
+      min-width:280px;
+      max-width:720px;
+      position:relative;
+      border-radius:12px;
+      overflow:hidden;
+      background:#ddd;
+      box-shadow:0 8px 28px rgba(15,23,42,0.08);
+    }
+
+    .slide {
+      display:none;
+      width:100%;
+      height:520px; /* fixed medium size for desktop */
+    }
+    .slide img{
+      width:100%;
+      height:100%;
+      object-fit:cover; /* ensures same medium look regardless of original size */
+      display:block;
+    }
+
+    /* arrows */
+    .arrow {
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      background:rgba(0,0,0,0.45);
+      color:#fff;
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      z-index:20;
+      border:0;
+    }
+    .arrow.left{left:12px}
+    .arrow.right{right:12px}
+    .arrow:focus{outline:none; box-shadow:0 0 0 4px rgba(26,115,232,0.12)}
+
+    /* dots */
+    .dots {
+      position:absolute;
+      bottom:12px;
+      left:50%;
+      transform:translateX(-50%);
+      z-index:20;
+      display:flex;
+      gap:8px;
+    }
+    .dot {
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#cfcfcf;
+      cursor:pointer;
+      transition:background .18s;
+      border:0;
+    }
+    .dot.active{background:var(--accent)}
+
+    /* right info column */
+    .info {
+      flex:1 1 36%;
+      min-width:240px;
+      max-width:420px;
+      background:var(--card-bg);
+      border-radius:10px;
+      padding:22px;
+      box-shadow:0 8px 22px rgba(15,23,42,0.06);
+    }
+    .info h2{
+      margin:0 0 12px 0;
+      color:var(--accent);
+      font-size:18px;
+      font-weight:700;
+    }
+    .info ul{list-style:none;padding:0;margin:0}
+    .info li{
+      margin:10px 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .info b{color:#222}
+
+    /* content area */
+    .content-wrap{
+      max-width:1100px;
+      margin:28px auto;
+      padding:0 20px 56px 20px;
+    }
+    .content-wrap h3{font-size:20px;margin-bottom:12px}
+    .content-wrap p{color:#333;font-size:15px;white-space:pre-line}
+
+    /* simple "You should hire me because..." block (no bg, no button) */
+    .why {
+      margin-top:28px;
+      max-width:900px;
+      font-size:15px;
+      color:#333;
+    }
+    .why strong{display:block;margin-bottom:8px;font-weight:700}
+
+    /* responsive sizes */
+    @media (max-width:1000px){
+      .top-wrap{gap:20px;padding:0 18px}
+      .slide{height:420px}
+    }
+    @media (max-width:780px){
+      header{padding:16px}
+      .top-wrap{flex-direction:column;padding:0 14px}
+      .slideshow{max-width:100%}
+      .slide{height:300px}
+      .info{max-width:100%; width:100%}
+    }
+    @media (max-width:420px){
+      .slide{height:220px}
+      .info{padding:16px}
+      .content-wrap{padding:0 12px 40px}
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Project Details</h1>
+  </header>
+
+  <div class="top-wrap">
+    <!-- LEFT: Slideshow -->
+    <div class="slideshow" aria-label="Project images slideshow">
+      <div class="slide">
+        <img src="assets/img/portfolio/4-pica.jpg" alt="Project image 1">
+      </div>
+      <div class="slide">
+        <img src="assets/img/portfolio/2.jpg" alt="Project image 2">
+      </div>
+      <div class="slide">
+        <img src="assets/img/portfolio/1.jpg" alt="Project image 3">
+      </div>
+
+      <button class="arrow left" aria-label="Previous" onclick="changeSlide(-1)">‹</button>
+      <button class="arrow right" aria-label="Next" onclick="changeSlide(1)">›</button>
+
+      <div class="dots" aria-hidden="false">
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+        <span class="dot" onclick="goToSlide(3)"></span>
+      </div>
+    </div>
+
+    <!-- RIGHT: Info box -->
+    <aside class="info" aria-labelledby="project-info-heading">
+      <h2 id="project-info-heading">Project information</h2>
+      <ul>
+        <li><b>Role:</b> Content Lead – TechHub Society</li>
+        <li><b>Tools Used:</b> Excel, OBS, Canva, Basic audio mixers</li>
+        <li><b>What I Do:</b> Make chaos look organized, keep the vibe strong, and get things done on time.</li>
+        <li><b>Location:</b> College Auditorium</li>
+      </ul>
+    </aside>
+  </div>
+
+  <!-- Bottom content -->
+  <main class="content-wrap">
+    <section>
+      <h3>How I Managed the Event</h3>
+      <p>
+        My day starts at 8 AM and by 10 AM I reach college to gather the team. I prepare an Excel sheet to track tasks and who is responsible for each item. Because I know how to set up microphones and OBS, I go straight to the auditorium and handle the audio and video configuration. Students arrive after our team’s email reminder. I use a simple paper plan to arrange seats and check equipment. Once everything is ready, the podcast or session starts — and I stay on hand to fix issues and keep things running smoothly.
+      </p>
+    </section>
+
+    <section class="why">
+      <strong>You should hire me because</strong>
+      <p>
+        I organize work clearly, solve problems quickly, and manage technical setups with confidence. I can turn plans into results by coordinating people and tasks, setting up reliable audio/video systems, and keeping projects on schedule. I learn fast, stay calm under pressure, and focus on delivering practical solutions that help teams succeed.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    // Slideshow functionality (autoplay + manual)
+    (function(){
+      const slides = document.querySelectorAll('.slide');
+      const dots = document.querySelectorAll('.dot');
+      let index = 0;
+      let timer = null;
+
+      function show(i){
+        if(i >= slides.length) i = 0;
+        if(i < 0) i = slides.length - 1;
+        slides.forEach(s => s.style.display = 'none');
+        dots.forEach(d => d.classList.remove('active'));
+        slides[i].style.display = 'block';
+        dots[i].classList.add('active');
+        index = i;
+      }
+
+      window.changeSlide = function(step){
+        show(index + step);
+        resetTimer();
+      }
+      window.goToSlide = function(n){
+        show(n - 1);
+        resetTimer();
+      }
+
+      function startTimer(){
+        timer = setInterval(() => {
+          show(index + 1);
+        }, 4000);
+      }
+      function resetTimer(){
+        if(timer) clearInterval(timer);
+        startTimer();
+      }
+
+      // init
+      show(0);
+      startTimer();
+
+      // Pause autoplay on mouse enter, resume on leave (mobile/desktop friendly)
+      const slideshow = document.querySelector('.slideshow');
+      slideshow.addEventListener('mouseenter', () => { if(timer) clearInterval(timer); });
+      slideshow.addEventListener('mouseleave', () => { resetTimer(); });
+
+      // ensure images load with same size even if original sizes vary (object-fit handles)
+    })();
+  </script>
+</body>
+</html>
